@@ -125,15 +125,19 @@ class ParseTwitter(object):
 
         profile_urls = []
 
+        # По Селектору xpath_to_comments также находится сам твит автора, поэтому начинаем перебор с index = 2
         xpath_to_comments = '(.//article["aria-labelledby"]/div/div/div/div[2]/div[2]/div/div/div/div/div/a)'
-        index = 1
+        index = 2
+
+        # Если количество комментариев к твиту меньше, чем нам необходимо вернуть, ограничвием условие перебора
+        # количеством комментариев
+        if len(self.driver.find_elements(By.XPATH, xpath_to_comments))-1 < count_comments:
+            count_comments = len(self.driver.find_elements(By.XPATH, xpath_to_comments))-1
+
         while len(profile_urls) < count_comments:
             comment = self.driver.find_element(By.XPATH, f'{xpath_to_comments}[{index}]')
             self._focus_on_element(comment)
-
-            if self.profile_url != comment.get_attribute('href'):
-                profile_urls.append(comment.get_attribute('href'))
-
+            profile_urls.append(comment.get_attribute('href'))
             index += 1
 
         if unique_authors:
@@ -157,7 +161,11 @@ class ParseTwitter(object):
 
             # Берём твит
             twit = self._find_twit(index)
-            self._focus_on_element(twit)
+
+            try:
+                self._focus_on_element(twit)
+            except (NoSuchElementException, AttributeError):
+                index += 1
 
             # Прокручиваем экран
             self.driver.execute_script('window.scrollBy(0, window.innerHeight)')
@@ -175,5 +183,6 @@ class ParseTwitter(object):
 
 
 if __name__ == "__main__":
-    twitter = ParseTwitter(profile_url="https://twitter.com/elonmusk")
+    #twitter = ParseTwitter(profile_url="https://twitter.com/elonmusk")
+    twitter = ParseTwitter(profile_url="https://twitter.com/varlamov")
     twitter.constructor(10)
