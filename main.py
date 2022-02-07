@@ -12,7 +12,8 @@ from selenium.webdriver.support import expected_conditions as ec
 
 class ParseTwitter(object):
     """
-    Класс вытаскивает со страницы профиля последние X твиттов пользователя, а также авторов комментариев.
+    Класс вытаскивает со страницы профиля последние X твиттов пользователя, а
+    также авторов комментариев.
     """
 
     login_url = "https://twitter.com/login"
@@ -33,11 +34,14 @@ class ParseTwitter(object):
         if self.silence:
             self.options.add_argument('headless')
 
-        self.options.add_argument('User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) '
-                                  'AppleWebKit/537.36 (KHTML, like Gecko) '
-                                  'Chrome/47.0.2526.111 Safari/537.36')
-        self.options.add_argument("--lang=eng")
-        self.options.add_argument('--disable-blink-features=AutomationControlled')
+        self.options.add_argument(
+            'User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64) '
+            'AppleWebKit/537.36 (KHTML, like Gecko) '
+            'Chrome/47.0.2526.111 Safari/537.36')
+        self.options.add_argument(
+            "--lang=eng")
+        self.options.add_argument(
+            '--disable-blink-features=AutomationControlled')
 
         return webdriver.Chrome(service=self.service, options=self.options)
 
@@ -48,7 +52,8 @@ class ParseTwitter(object):
         :return Возвращает элемент с твитом
         """
         time.sleep(0.5)
-        xpath_to_twit = f"(.//section[\"aria-labelledby\"]//article[\"aria-labelledby\"])[{index}]"
+        xpath_to_twit = ("(.//section[\"aria-labelledby\"]" 
+                         f"//article[\"aria-labelledby\"])[{index}]")
         try:
             element = self.driver.find_element(By.XPATH, xpath_to_twit)
 
@@ -67,7 +72,8 @@ class ParseTwitter(object):
     @staticmethod
     def _read_twit_message(twit):
         """
-        Метод возращает сообщение твита, если текст в твите отсутствует, то возвращает --- empty twit ---
+        Метод возращает сообщение твита, если текст в твите отсутствует, то
+        возвращает --- empty twit ---
         :param twit: Элемент с твитом
         :return: Сообщение твита
         """
@@ -75,7 +81,8 @@ class ParseTwitter(object):
         message = '--- empty twit ---'
 
         try:
-            message = twit.find_element(By.XPATH, xpath_to_twitter_message).text
+            message = twit.find_element(
+                By.XPATH, xpath_to_twitter_message).text
         except (NoSuchElementException, AttributeError):
             pass
         finally:
@@ -89,7 +96,8 @@ class ParseTwitter(object):
         """
         xpath_to_thread_url = "div/div/div/div[2]/div[2]/div[1]/div/div/div/a"
         try:
-            get_url_thread = twit.find_element(By.XPATH, xpath_to_thread_url).get_attribute('href')
+            get_url_thread = twit.find_element(
+                By.XPATH, xpath_to_thread_url).get_attribute('href')
         except NoSuchElementException:
             pass
         else:
@@ -110,32 +118,45 @@ class ParseTwitter(object):
         self.driver.close()
         self.driver.switch_to.window(self.driver.window_handles[0])
 
-    def _take_thread_comments(self, thread_url, count_comments: int, unique_authors=True):
+    def _take_thread_comments(self, thread_url, count_comments: int,
+                              unique_authors=True):
         """
-        :param unique_authors: Если True, то метод возвращает список с уникальными авторами комментариев
-        :param count_comments: Задаёт количество комментариев, профили авторов которых нужно вернуть
-        :return Возвращает список с ссылками на профиль последних X авторов комментариев
+        :param unique_authors: Если True, то метод возвращает список с
+        уникальными авторами комментариев
+        :param count_comments: Задаёт количество комментариев, профили авторов
+        которых нужно вернуть
+        :return Возвращает список с ссылками на профиль последних X авторов
+        комментариев
         """
         # Открываем тред твита в новой вкладке
         self._open_tab(thread_url)
 
         WebDriverWait(self.driver, 5).until(
-            ec.presence_of_element_located((By.XPATH, ".//article[@aria-labelledby]"))
+            ec.presence_of_element_located((
+                By.XPATH, ".//article[@aria-labelledby]")
+            )
         )
 
         profile_urls = []
 
-        # По Селектору xpath_to_comments также находится сам твит автора, поэтому начинаем перебор с index = 2
-        xpath_to_comments = '(.//article["aria-labelledby"]/div/div/div/div[2]/div[2]/div/div/div/div/div/a)'
+        # По Селектору xpath_to_comments также находится сам твит автора,
+        # поэтому начинаем перебор с index = 2
+        xpath_to_comments = (
+            '(.//article["aria-labelledby"]'
+            '/div/div/div/div[2]/div[2]/div/div/div/div/div/a)'
+        )
         index = 2
 
-        # Если количество комментариев к твиту меньше, чем нам необходимо вернуть, ограничвием условие перебора
-        # количеством комментариев
-        if len(self.driver.find_elements(By.XPATH, xpath_to_comments))-1 < count_comments:
-            count_comments = len(self.driver.find_elements(By.XPATH, xpath_to_comments))-1
+        # Если количество комментариев к твиту меньше, чем нам необходимо
+        # вернуть, ограничвием условие перебора количеством комментариев
+        get_comments = self.driver.find_elements(By.XPATH, xpath_to_comments)
+        if len(get_comments)-1 < count_comments:
+            count_comments = len(get_comments)-1
 
         while len(profile_urls) < count_comments:
-            comment = self.driver.find_element(By.XPATH, f'{xpath_to_comments}[{index}]')
+            comment = self.driver.find_element(
+                By.XPATH, f'{xpath_to_comments}[{index}]'
+            )
             self._focus_on_element(comment)
             profile_urls.append(comment.get_attribute('href'))
             index += 1
@@ -152,13 +173,15 @@ class ParseTwitter(object):
         """
         self.driver.get(self.profile_url)
         WebDriverWait(self.driver, 5).until(
-            ec.presence_of_element_located((By.XPATH, '(.//section[@aria-labelledby])[1]'))
+            ec.presence_of_element_located((
+                By.XPATH, '(.//section[@aria-labelledby])[1]')
+            )
         )
 
         index = 1
         while index <= count_twits:
             time.sleep(0.5)
-
+            
             # Берём твит
             twit = self._find_twit(index)
 
@@ -168,11 +191,14 @@ class ParseTwitter(object):
                 index += 1
 
             # Прокручиваем экран
-            self.driver.execute_script('window.scrollBy(0, window.innerHeight)')
+            self.driver.execute_script(
+                'window.scrollBy(0, window.innerHeight)'
+            )
 
             message = self._read_twit_message(twit)
             url_thread = self._get_thread_url(twit)
-            authors_comments = self._take_thread_comments(url_thread, count_comments=3, unique_authors=False)
+            authors_comments = self._take_thread_comments(
+                url_thread, count_comments=3, unique_authors=False)
 
             logging.info(message)
             logging.info(authors_comments)
