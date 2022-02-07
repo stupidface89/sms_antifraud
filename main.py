@@ -183,6 +183,5 @@ class ParseTwitter(object):
 
 
 if __name__ == "__main__":
-    #twitter = ParseTwitter(profile_url="https://twitter.com/elonmusk")
-    twitter = ParseTwitter(profile_url="https://twitter.com/varlamov")
+    twitter = ParseTwitter(profile_url="https://twitter.com/elonmusk")
     twitter.constructor(10)
