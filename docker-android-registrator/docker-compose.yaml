@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  registrator:
+    #image: 192.168.1.100:5000/docker-android-registrator:latest
+    build: ./
+    command: "docker compose up"
+    restart: always
+    environment:
+      - TZ=Asia/Krasnoyarsk
+      - MASTER_API_URL=http://192.168.1.100:8000
+    volumes:
+      - './home/iplo/Desktop/docker-android-registrator/screenshots:/opt/registrator/screenshots'
+    privileged: true
+    devices:
+      - /dev/kvm
+    deploy:
+      replicas: 2
+      placement:
+        constraints:
+          - node.labels.device_required == true

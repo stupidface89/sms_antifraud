@@ -1,0 +1,344 @@
+{
+"android_builds": [
+    {"Build ID": "8600452",
+     "Tag": "android-security-10.0.0_r68",
+     "Version": "Android10",
+     "Incremental":  ""},
+
+    {"Build ID": "8528209",
+     "Tag": "android-security-10.0.0_r67",
+     "Version": "Android10",
+     "Incremental":  ""},
+
+    {"Build ID": "8287684",
+     "Tag": "android-security-10.0.0_r66",
+     "Version": "Android10",
+     "Incremental":  ""},
+
+    {"Build ID": "8257478",
+    "Tag": "android-security-10.0.0_r65",
+    "Version": "Android10",
+     "Incremental":  ""},
+
+    {"Build ID": "8157299",
+    "Tag": "android-security-10.0.0_r64",
+    "Version": "Android10",
+     "Incremental":  ""},
+
+    {"Build ID": "8042689",
+    "Tag": "android-security-10.0.0_r63",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "7964643",
+    "Tag": "android-security-10.0.0_r62",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "7804786",
+    "Tag": "android-security-10.0.0_r61",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "7786870",
+    "Tag": "android-security-10.0.0_r60",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "7678332",
+    "Tag": "android-security-10.0.0_r59",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "7507835",
+     "Tag": "android-security-10.0.0_r58",
+     "Version": "Android10",
+     "Incremental":  ""},
+
+    {"Build ID": "7483358",
+     "Tag": "android-security-10.0.0_r57",
+     "Version": "Android10",
+     "Incremental":  ""},
+
+    {"Build ID": "7427955",
+    "Tag": "android-security-10.0.0_r56",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "7269719",
+    "Tag": "android-security-10.0.0_r55",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "7250004",
+    "Tag": "android-security-10.0.0_r54",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "7127522",
+    "Tag": "android-security-10.0.0_r53",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "7070703",
+    "Tag": "android-security-10.0.0_r52",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "7023426",
+    "Tag": "android-security-10.0.0_r51",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "6969601",
+    "Tag": "android-security-10.0.0_r50",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "6893682",
+    "Tag": "android-security-10.0.0_r49",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "6878114",
+    "Tag": "android-security-10.0.0_r48",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "6780337",
+    "Tag": "android-10.0.0_r47",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "6777444",
+    "Tag": "android-10.0.0_r46",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QD4A.200805.003",
+    "Tag": "android-10.0.0_r45",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QD4A.200805.001",
+    "Tag": "android-10.0.0_r44",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QD4A.200317.027",
+    "Tag": "android-10.0.0_r43",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QD4A.200317.024.A1",
+    "Tag": "android-10.0.0_r42",
+    "Version": "Android10",
+    "Incremental": ""},
+
+    {"Build ID": "QQ3A.200805.001",
+    "Tag": "android-10.0.0_r41",
+    "Version": "Android10",
+    "Incremental": "6578210"},
+
+    {"Build ID": "QQ3A.200705.002",
+    "Tag": "android-10.0.0_r40",
+    "Version": "Android10",
+    "Incremental": "6506677"},
+
+    {"Build ID": "QQ3A.200605.002.A1",
+    "Tag": "android-10.0.0_r39",
+    "Version": "Android10",
+    "Incremental": ""},
+
+    {"Build ID": "QQ3A.200605.002",
+    "Tag": "android-10.0.0_r38",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ3A.200605.001",
+    "Tag": "android-10.0.0_r37",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ2A.200501.001.B3",
+    "Tag": "android-10.0.0_r36",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ2A.200501.001.B2",
+    "Tag": "android-10.0.0_r35",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ2A.200501.001.A3",
+    "Tag": "android-10.0.0_r34",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ2A.200405.005",
+    "Tag": "android-10.0.0_r33",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+
+    {"Build ID": "QQ2A.200305.004.A1",
+    "Tag": "android-10.0.0_r32",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ2A.200305.003",
+    "Tag": "android-10.0.0_r31",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ2A.200305.002",
+    "Tag": "android-10.0.0_r30",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1D.200205.002",
+    "Tag": "android-10.0.0_r29",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1C.200205.002",
+    "Tag": "android-10.0.0_r28",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1B.200205.002",
+    "Tag": "android-10.0.0_r27",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1A.200205.002",
+    "Tag": "android-10.0.0_r26",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1D.200105.002",
+    "Tag": "android-10.0.0_r25",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1C.200105.004",
+    "Tag": "android-10.0.0_r24",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1B.200105.004",
+    "Tag": "android-10.0.0_r23",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1A.200105.003",
+    "Tag": "android-10.0.0_r22",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1A.200105.002",
+    "Tag": "android-10.0.0_r21",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1C.191205.016.A1",
+    "Tag": "android-10.0.0_r20",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1B.191205.012.A1",
+    "Tag": "android-10.0.0_r19",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1B.191205.011",
+    "Tag": "android-10.0.0_r18",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QP1A.191005.007.A3",
+    "Tag": "android-10.0.0_r17",
+    "Version": "Android10",
+    "Incremental": "5972272"},
+
+    {"Build ID": "QQ1A.191205.011",
+    "Tag": "android-10.0.0_r16",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QQ1A.191205.008",
+    "Tag": "android-10.0.0_r15",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QD1A.190821.014.C2",
+    "Tag": "android-10.0.0_r14",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QD1A.190821.014",
+    "Tag": "android-10.0.0_r13",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QD1A.190821.007.A3",
+    "Tag": "android-10.0.0_r12",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QP1A.191105.004",
+    "Tag": "android-10.0.0_r11",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QP1A.191105.003",
+    "Tag": "android-10.0.0_r10",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QD1A.190821.011.C4",
+    "Tag": "android-10.0.0_r9",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QD1A.190821.011",
+    "Tag": "android-10.0.0_r8",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QD1A.190821.007",
+    "Tag": "android-10.0.0_r7",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "5933585",
+    "Tag": "android-10.0.0_r6",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QP1A.191005.007.A1",
+    "Tag": "android-10.0.0_r5",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QP1A.191005.007",
+    "Tag": "android-10.0.0_r4",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QP1A.190711.020.C3",
+    "Tag": "android-10.0.0_r3",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QP1A.190711.020",
+    "Tag": "android-10.0.0_r2",
+    "Version": "Android10",
+    "Incremental":  ""},
+
+    {"Build ID": "QP1A.190711.019",
+    "Tag": "android-10.0.0_r1",
+    "Version": "Android10",
+    "Incremental":  ""}
+    ]
+}

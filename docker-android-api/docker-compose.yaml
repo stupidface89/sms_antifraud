@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    container_name: db
+    restart: always
+    environment:
+      - POSTGRES_DB=docker_android
+      - POSTGRES_USER=iplo
+      - POSTGRES_PASSWORD=171202
+      - POSTGRES_HOST=db
+      - TZ="Asia/Krasnoyarsk"
+    volumes:
+      - "./pg_data:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d  $${POSTGRES_DB} -U $${POSTGRES_USER}" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    container_name: api
+    restart: always
+    build: ./API
+    environment:
+      - POSTGRES_PASSWORD=171202
+      - POSTGRES_USER=iplo
+      - POSTGRES_DB=docker_android
+      - POSTGRES_HOST=db
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+    volumes:
+      - "./API:/api"
+    command: bash -c "python /api/manage.py makemigrations && python /api/manage.py migrate && python /api/manage.py runserver 0.0.0.0:8000"
+
