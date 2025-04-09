@@ -12,7 +12,7 @@ The system offers API endpoints for SMS analysis and fraud detection reporting, 
 Contact
 For any questions or feedback, please contact:
 
-Email: 
+Email: duplicate24@mail.ru
 GitHub: @stupidface89
 
 duplicate
