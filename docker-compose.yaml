@@ -1,0 +1,65 @@
+services:
+  api-task-maintenance:
+    container_name: api
+    restart: always
+    build: app
+    environment:
+      - POSTGRES_PASSWORD=171202
+      - POSTGRES_USER=iplo
+      - POSTGRES_DB=docker_android
+      - POSTGRES_HOST=db
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+    volumes:
+      - "./API:/api"
+    command: bash -c "python /api/manage.py makemigrations && python /api/manage.py migrate && python /api/manage.py runserver 0.0.0.0:8000"
+
+  grafana-dashboard:
+    image: grafana/grafana
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+
+  registrator:
+    build: user-behavior-scenarios
+    command: "docker compose up"
+    restart: always
+    environment:
+      - TZ=Asia/Krasnoyarsk
+      - MASTER_API_URL=http://192.168.1.100:8000
+    volumes:
+      - './user-behavior-scenarios/screenshots:/opt/registrator/screenshots'
+    privileged: true
+    devices:
+      - /dev/kvm
+    deploy:
+      replicas: 2
+      placement:
+        constraints:
+          - node.labels.device_required == true
+
+  db:
+    image: postgres:13
+    container_name: db
+    restart: always
+    environment:
+      - POSTGRES_DB=docker_android
+      - POSTGRES_USER=iplo
+      - POSTGRES_PASSWORD=171202
+      - POSTGRES_HOST=db
+      - TZ="Asia/Krasnoyarsk"
+    volumes:
+      - "./pg_data:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d  $${POSTGRES_DB} -U $${POSTGRES_USER}" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
