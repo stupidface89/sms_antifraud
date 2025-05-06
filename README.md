@@ -1,3 +1,5 @@
+# sms antifraud
+=======
 ## SMS Antifraud System with NLP
 This project develops an advanced SMS antifraud system that leverages Natural Language Processing (NLP) techniques to detect and prevent fraudulent SMS messages in real-time. The system integrates SMS Bot ANDROID for interacting with Android devices, SMS ANDROID API Farm for managing SMS traffic, and Apache Kafka for high-throughput messaging.
 
@@ -22,3 +24,4 @@ Integration of advanced deep learning models
 Real-time dashboard for fraud analytics
 Multi-language support
 Enhanced user management system
+
