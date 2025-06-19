@@ -17,7 +17,10 @@ For any questions or feedback, please contact:
 Email: 
 GitHub: @stupidface89
 
-duplicate
+Dmitrii Bykov 
+
+
+LLC Duplicate
 
 Roadmap
 Integration of advanced deep learning models
